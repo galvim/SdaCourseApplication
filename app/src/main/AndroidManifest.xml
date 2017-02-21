@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.rent.sdacourseapplication">
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,6 +16,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".drawing_app.drawfinger.DrawingActivity"
-></activity>    </application>
+            android:label="Drawing Activity"/>
+        <activity android:name=".gallery.GalleryActivity"
+            android:label="Gallery Activity"/>
+  </application>
 
 </manifest>

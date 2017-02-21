@@ -2,7 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@id/clear"
+        android:id="@id/clear_view"
         android:title="Wyczyść" />
+    <item
+        android:id="@+id/save"
+        android:title="Zapis"
+
+        ></item>
+    <item
+        android:id="@+id/drawing_gallery"
+        android:title="Drawing Gallery"
+
+        />
 
 </menu>
