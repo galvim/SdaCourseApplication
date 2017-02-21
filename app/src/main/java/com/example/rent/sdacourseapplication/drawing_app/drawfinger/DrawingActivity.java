@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.rent.sdacourseapplication.R;
 import com.example.rent.sdacourseapplication.gallery.GalleryActivity;
@@ -74,6 +75,7 @@ public class DrawingActivity extends AppCompatActivity {
         } else if(item.getItemId() == R.id.save) {
             try {
                 saveDrawingToFile();
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -95,6 +97,7 @@ public class DrawingActivity extends AppCompatActivity {
 
     private String createFileName() {
         String timeStamp =  new SimpleDateFormat("yyyyMMdd_HHmmSS").format(new Date());
+
         return "my_drawing" + timeStamp+".png";
     }
 

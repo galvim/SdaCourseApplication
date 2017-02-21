@@ -13,14 +13,20 @@ import com.example.rent.sdacourseapplication.R;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class DrawingPagerAdapter extends PagerAdapter{
-    private final File[] files;
+    private File[] files;
 
     public DrawingPagerAdapter(File[] files){
         this.files = files;
     }
 
+    public int getItemPosition(Object object) {
+        return POSITION_NONE;
+    }
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
        LayoutInflater inflater =  LayoutInflater.from(container.getContext());
@@ -53,5 +59,18 @@ public class DrawingPagerAdapter extends PagerAdapter{
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
        container.removeView((View) object);
+    }
+
+    public void deleteItem(int currentItem) {
+        if(currentItem < files.length) {
+            List<File> list = new ArrayList<>(Arrays.asList(files));
+            list.get(currentItem).delete();
+            list.remove(currentItem);
+
+            File[] newFiles = new File[list.size()];
+            list.toArray(newFiles);
+            files = newFiles;
+            notifyDataSetChanged();
+        }
     }
 }
