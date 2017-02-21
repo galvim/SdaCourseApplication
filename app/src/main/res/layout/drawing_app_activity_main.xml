@@ -6,8 +6,9 @@
     android:layout_height="match_parent"
     tools:context="com.example.rent.sdacourseapplication.drawing_app.drawfinger.DrawingActivity">
 
-    <com.example.rent.drawingapp.SimpleDrawingView
-        android:id="@+id/drawing_view"
+    <com.example.rent.sdacourseapplication.drawing_app.drawfinger.SimpleDrawingView
+
+    android:id="@+id/drawing_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />
