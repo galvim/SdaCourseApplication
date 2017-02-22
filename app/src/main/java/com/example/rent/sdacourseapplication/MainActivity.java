@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.rent.sdacourseapplication.drawing_app.drawfinger.DrawingActivity;
+import com.example.rent.sdacourseapplication.todo_list.todoList_activity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,10 +30,19 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         drawerToggle = new ActionBarDrawerToggle(this,drawerLayout, R.string.open, R.string.close);
         TextView rysowanie = (TextView) findViewById(R.id.drawing_app);
+
         rysowanie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), DrawingActivity.class);
+                startActivity(intent);
+            }
+        });
+        TextView todoList = (TextView) findViewById(R.id.toDoList);
+        todoList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(),todoList_activity.class);
                 startActivity(intent);
             }
         });
