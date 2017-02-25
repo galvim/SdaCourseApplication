@@ -1,7 +1,6 @@
 package com.example.rent.sdacourseapplication;
 
 import android.content.Intent;
-import android.os.PersistableBundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,9 +9,9 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.rent.sdacourseapplication.drawing_app.drawfinger.DrawingActivity;
+import com.example.rent.sdacourseapplication.milionQuiz.QuizActivity;
 import com.example.rent.sdacourseapplication.todo_list.todoList_activity;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,6 +42,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(),todoList_activity.class);
+                startActivity(intent);
+            }
+        });
+        TextView milionerzy = (TextView) findViewById(R.id.quiz);
+        milionerzy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), QuizActivity.class);
                 startActivity(intent);
             }
         });

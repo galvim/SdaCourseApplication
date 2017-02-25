@@ -1,5 +1,6 @@
 package com.example.rent.sdacourseapplication.todo_list;
 
+import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,11 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by RENT on 2017-02-22.
- */
-
-public class ToDoListAdapter extends RecyclerView.Adapter<ToDoListAdapter.MyViewHolder>{
+public class ToDoListAdapter extends RecyclerView.Adapter<ToDoListAdapter.MyViewHolder> {
    private List<ToDoListItem> items = new ArrayList<>();
     private OnItemCheckStateChanged checkListener;
 
@@ -27,10 +24,21 @@ public class ToDoListAdapter extends RecyclerView.Adapter<ToDoListAdapter.MyView
         this.checkListener = checkListener;
     }
 
+    // Odznaczanie itemów w Action Menu
+    public void deselectAllItems(){
+        for (ToDoListItem item : items){
+            item.setChecked(false);
+        }
+        notifyDataSetChanged();
+    }
 
+    public List<ToDoListItem> getItems() {
+        return items;
+    }
 
-
-
+    public void setItems(List<ToDoListItem> items) {
+        this.items = items;
+    }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
@@ -54,8 +62,10 @@ public class ToDoListAdapter extends RecyclerView.Adapter<ToDoListAdapter.MyView
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
+
         final ToDoListItem listItem = items.get(position);
         holder.textView.setText(listItem.getText());
+        holder.checkBox.setOnCheckedChangeListener(null);
         holder.checkBox.setChecked(listItem.isChecked());
         holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -108,6 +118,7 @@ public class ToDoListAdapter extends RecyclerView.Adapter<ToDoListAdapter.MyView
         }
 
     }
+
 
 }
 
