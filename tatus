@@ -1,0 +1,38 @@
+[33mcommit babc54fc4cc9fc7b37b9414767c0d95c4c3ac6c2[m
+Author: MichalN <nersoft.pl@gmail.com>
+Date:   Wed Feb 22 20:47:34 2017 +0100
+
+    zrobiony adapter, soon...
+
+[33mcommit aa1930dda4cbee9b7af3ab713a5f8edeafb26734[m
+Merge: fe8a8cc 9eb69aa
+Author: galvim <nersoft.pl@gmail.com>
+Date:   Tue Feb 21 20:58:33 2017 +0100
+
+    Merge pull request #1 from galvim/save_drawing
+    
+    Save drawing
+
+[33mcommit 9eb69aa7733ed25ec8bb40ffa36f84cdd12cf82a[m
+Author: MichalN <nersoft.pl@gmail.com>
+Date:   Tue Feb 21 20:52:26 2017 +0100
+
+    dodane usuwanie z galerii
+
+[33mcommit 1fbe5e6f00ff7b61cd551fb890c3fc285f8c729e[m
+Author: MichalN <nersoft.pl@gmail.com>
+Date:   Tue Feb 21 19:49:22 2017 +0100
+
+    dodana galeria
+
+[33mcommit fe8a8cc4235621d27bef0144d29d83b4a69371c4[m
+Author: Majkel <nersoft.pl@gmail.com>
+Date:   Tue Feb 21 13:12:13 2017 +0100
+
+    Dodane nowe funkcje/nie dodane na zajeciach
+
+[33mcommit 30972d9c8726ca3cee2799283b215db25e6b3421[m
+Author: MichalN <nersoft.pl@gmail.com>
+Date:   Mon Feb 20 18:15:29 2017 +0100
+
+    first commit 2 init project

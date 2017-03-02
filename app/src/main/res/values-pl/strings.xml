@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name ="Checked_items">Zaznaczono %d elementów</string>
+
+    <plurals name="checked_items_plural">
+    <item quantity="one">%d element</item>
+    <item quantity="two">%d elementy</item>
+        <item quantity="few">%d elementy</item>
+    <item quantity="other">%d elementów</item>
+
+
+    </plurals>
+
+</resources>

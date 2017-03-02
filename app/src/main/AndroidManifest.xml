@@ -19,6 +19,11 @@
             android:label="Drawing Activity"/>
         <activity android:name=".gallery.GalleryActivity"
             android:label="Gallery Activity"/>
+        <activity android:name=".todo_list.todoList_activity"
+            android:label="ToDo LisT"/>
+        <activity android:name=".milionQuiz.QuizActivity"
+            android:label="Milionerzy"/>
+
   </application>
 
 </manifest>

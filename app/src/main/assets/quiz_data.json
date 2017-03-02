@@ -1,0 +1,49 @@
+{
+  "questionsCount" : 2,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Głównym komponentem aplikacji androidowej nie jest : ",
+      "answers": [
+        {
+          "isCorrect": false,
+          "text": "Activity"
+        },
+        {
+          "isCorrect": true,
+          "text": "AndroidManifest"
+        },
+        {
+          "isCorrect": false,
+          "text": "BroadcastReceiver"
+        },
+        {
+          "isCorrect": false,
+          "text": "Service"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Więcej niż jedno zwierzę : ",
+      "answers": [
+        {
+          "isCorrect": false,
+          "text": "owca"
+        },
+        {
+          "isCorrect": false,
+          "text": "lama"
+        },
+        {
+          "isCorrect": true,
+          "text": "stado"
+        },
+        {
+          "isCorrect": false,
+          "text": "kanapka"
+        }
+      ]
+    }
+  ]
+}
