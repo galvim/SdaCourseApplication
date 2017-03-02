@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.rent.sdacourseapplication.books.BooksActivity;
 import com.example.rent.sdacourseapplication.drawing_app.drawfinger.DrawingActivity;
 import com.example.rent.sdacourseapplication.milionQuiz.QuizActivity;
 import com.example.rent.sdacourseapplication.todo_list.todoList_activity;
@@ -50,6 +51,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), QuizActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        TextView books = (TextView) findViewById(R.id.books);
+        books.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BooksActivity.class);
                 startActivity(intent);
             }
         });
