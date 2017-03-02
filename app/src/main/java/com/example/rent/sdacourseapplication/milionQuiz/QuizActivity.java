@@ -39,13 +39,19 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_activity);
+        currentQuestionIndex = 0;
 
-        currentQuestionIndex = getIntent().getIntExtra(INDEX_KEY, 0);
 
         String json = null;
         try {
             json = loadQuizJson();
             quizContainer = new Gson().fromJson(json, QuizContainer.class);
+
+            if (currentQuestionIndex <= quizContainer.getQuestionsCount()-1) {
+                currentQuestionIndex = getIntent().getIntExtra(INDEX_KEY, 0);
+            } else {
+                Toast.makeText(QuizActivity.this," KONIEC PYTA", Toast.LENGTH_SHORT);
+            }
             TextView question_textView = (TextView) findViewById(R.id.question_textView);
             question_textView.setText(quizContainer.getQuestions().get(currentQuestionIndex).getQuestion());
 
