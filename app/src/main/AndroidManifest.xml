@@ -26,6 +26,8 @@
 
         <activity android:name=".books.BooksActivity"
             android:label="Books"/>
+        <activity android:name=".Fortune.FortuneActivity"
+            android:label="Fortune Animation"/>
 
   </application>
 

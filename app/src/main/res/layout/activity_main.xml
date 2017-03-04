@@ -71,6 +71,17 @@
             android:paddingTop="10dp"
             android:gravity="center_horizontal"/>
 
+        <TextView
+            android:id="@+id/fortune"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground"
+            android:text="Animation Fortune"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:gravity="center_horizontal"/>
+
 
     </LinearLayout>
 

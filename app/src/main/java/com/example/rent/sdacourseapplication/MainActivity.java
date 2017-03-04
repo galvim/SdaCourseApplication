@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.rent.sdacourseapplication.Fortune.FortuneActivity;
 import com.example.rent.sdacourseapplication.books.BooksActivity;
 import com.example.rent.sdacourseapplication.drawing_app.drawfinger.DrawingActivity;
 import com.example.rent.sdacourseapplication.milionQuiz.QuizActivity;
@@ -60,6 +61,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, BooksActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        TextView fortune = (TextView) findViewById(R.id.fortune);
+        fortune.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FortuneActivity.class);
                 startActivity(intent);
             }
         });
