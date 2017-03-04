@@ -3,7 +3,7 @@
     <string name="open">open</string>
     <string name="close">close</string>
     <string name="clear">TO bedzie czyszczenie</string>
-    <string name = "Checked_items">Checked %d items</string>
+    <string name="Checked_items">Checked %d items</string>
 
     <plurals name="checked_items_plural">
         <item quantity="one">%d item</item>

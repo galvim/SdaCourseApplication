@@ -1,5 +1,6 @@
 package com.example.rent.sdacourseapplication.milionQuiz;
 
+import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Intent;
@@ -23,6 +24,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Random;
 
+import static android.R.attr.animation;
 import static com.example.rent.sdacourseapplication.R.layout.quiz_activity;
 
 public class QuizActivity extends AppCompatActivity implements View.OnClickListener {
@@ -31,6 +33,12 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     private int currentQuestionIndex;
     private QuizContainer quizContainer;
     private boolean wasViewClicked;
+    private ValueAnimator objectAnimator;
+    public static final String CORRECT_ANSWERS = "correct answers";
+    public static final String INCORRECT_ANSWERS = "incorrect answers";
+
+    private int correctAnswers;
+    private int incorrectAnswers;
 
     public QuizActivity() throws IOException {
     }
@@ -39,7 +47,9 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_activity);
-        currentQuestionIndex = 0;
+        currentQuestionIndex = getIntent().getIntExtra(INDEX_KEY, 0);
+
+        incorrectAnswers = getIntent().getIntExtra(INCORRECT_ANSWERS,0);
 
 
         String json = null;
@@ -79,7 +89,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
 
         final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progress_bar);
-        ValueAnimator objectAnimator = ObjectAnimator.ofInt(0, 100);
+        objectAnimator = ObjectAnimator.ofInt(0, 100);
         objectAnimator.setDuration(1000);
         objectAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -87,6 +97,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                 progressBar.setProgress((Integer) animation.getAnimatedValue());
             }
         });
+       // objectAnimator.addListener((AnimatorListenerAdapter) progressBar.onAnimationEnd(animation));
         objectAnimator.start();
 
 
@@ -111,18 +122,31 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         if (!wasViewClicked) {
 
             if ((Boolean) v.getTag()) {
+                ++correctAnswers;
                 Toast.makeText(v.getContext(), "Odpowiedz poprawna", Toast.LENGTH_SHORT).show();
 
             } else {
+                ++incorrectAnswers;
                 Toast.makeText(v.getContext(), "Zła odpowiedź", Toast.LENGTH_SHORT).show();
             }
             v.postDelayed(new Runnable() {
                 @Override
                 public void run() {
+                    if (currentQuestionIndex < quizContainer.getQuestionsCount() -1) {
                     Intent intent = new Intent(QuizActivity.this, QuizActivity.class);
                     intent.putExtra(INDEX_KEY, ++currentQuestionIndex);
+                        intent.putExtra(CORRECT_ANSWERS, correctAnswers);
+                        intent.putExtra(INCORRECT_ANSWERS, incorrectAnswers);
                     startActivity(intent);
+                } else {
+                        Intent intent = new Intent(QuizActivity.this, QuizSummaryActivity.class);
+                        intent.putExtra(CORRECT_ANSWERS, correctAnswers);
+                        intent.putExtra(INCORRECT_ANSWERS, incorrectAnswers);
+                        startActivity(intent);
+                   // Toast.makeText(QuizActivity.this, "QUIZ ENDS", Toast.LENGTH_LONG).show();
                 }
+                }
+               // objectAnimator.cancel();
             }, 3000);
             wasViewClicked = true;
             // MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.auswahlrunde_start);

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.rent.sdacourseapplication">
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,20 +17,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".drawing_app.drawfinger.DrawingActivity"
-            android:label="Drawing Activity"/>
-        <activity android:name=".gallery.GalleryActivity"
-            android:label="Gallery Activity"/>
-        <activity android:name=".todo_list.todoList_activity"
-            android:label="ToDo LisT"/>
-        <activity android:name=".milionQuiz.QuizActivity"
-        android:label="Milionerzy"/>
-
-        <activity android:name=".books.BooksActivity"
-            android:label="Books"/>
-        <activity android:name=".Fortune.FortuneActivity"
-            android:label="Fortune Animation"/>
-
-  </application>
+        <activity
+            android:name=".drawing_app.drawfinger.DrawingActivity"
+            android:label="Drawing Activity" />
+        <activity
+            android:name=".gallery.GalleryActivity"
+            android:label="Gallery Activity" />
+        <activity
+            android:name=".todo_list.todoList_activity"
+            android:label="ToDo LisT" />
+        <activity
+            android:name=".milionQuiz.QuizActivity"
+            android:label="Milionerzy" />
+        <activity
+            android:name=".books.BooksActivity"
+            android:label="Books" />
+        <activity
+            android:name=".Fortune.FortuneActivity"
+            android:label="Fortune Animation" />
+        <activity android:name=".milionQuiz.QuizSummaryActivity" />
+        <activity android:name=".mvp.MvpActivity"
+            android:label="MvP"></activity>
+    </application>
 
 </manifest>
