@@ -14,6 +14,7 @@ import com.example.rent.sdacourseapplication.Fortune.FortuneActivity;
 import com.example.rent.sdacourseapplication.books.BooksActivity;
 import com.example.rent.sdacourseapplication.drawing_app.drawfinger.DrawingActivity;
 import com.example.rent.sdacourseapplication.milionQuiz.QuizActivity;
+import com.example.rent.sdacourseapplication.mvp.MvpActivity;
 import com.example.rent.sdacourseapplication.todo_list.todoList_activity;
 
 public class MainActivity extends AppCompatActivity {
@@ -70,6 +71,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, FortuneActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        TextView mvp = (TextView) findViewById(R.id.mvp);
+        mvp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MvpActivity.class);
                 startActivity(intent);
             }
         });
